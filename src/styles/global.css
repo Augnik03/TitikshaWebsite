@@ -1,0 +1,34 @@
+
+@keyframes underline-expand {
+    from {
+      width: 0;
+      left: 50%;
+    }
+    to {
+      width: 100%;
+      left: 0;
+    }
+  }
+  
+  .underline-hover {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .underline-hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #1D4ED8; 
+    transition: all 0.5s ease;
+  }
+  
+  .underline-hover:hover::after {
+    width: 100%;
+    left: 0;
+    animation: underline-expand 0.3s forwards;
+  }
+  
